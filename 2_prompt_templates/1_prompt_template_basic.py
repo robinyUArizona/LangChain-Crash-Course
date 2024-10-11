@@ -12,6 +12,7 @@ from langchain_core.messages import HumanMessage
 # prompt = prompt_template.invoke({"topic": "cats"})
 # print(prompt)
 
+
 # # PART 2: Prompt with Multiple Placeholders
 # template_multiple = """You are a helpful assistant.
 # Human: Tell me a {adjective} story about a {animal}.
@@ -22,7 +23,7 @@ from langchain_core.messages import HumanMessage
 # print(prompt)
 
 
-# PART 3: Prompt with System and Human Messages (Using Tuples)
+# # PART 3: Prompt with System and Human Messages (Using Tuples)
 # messages = [
 #     ("system", "You are a comedian who tells jokes about {topic}."),
 #     ("human", "Tell me {joke_count} jokes."),
