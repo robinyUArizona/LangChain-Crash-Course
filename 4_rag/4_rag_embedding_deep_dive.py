@@ -50,21 +50,21 @@ def create_vector_store(docs, embeddings, store_name):
 # Note: The cost of using OpenAI embeddings will depend on your OpenAI API usage and pricing plan.
 # Pricing: https://openai.com/api/pricing/
 print("\n--- Using OpenAI Embeddings ---")
-openai_embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
+openai_embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 create_vector_store(docs, openai_embeddings, "chroma_db_openai")
 
-# 2. Hugging Face Transformers
-# Uses models from the Hugging Face library.
-# Ideal for leveraging a wide variety of models for different tasks.
-# Note: Running Hugging Face models locally on your machine incurs no direct cost other than using your computational resources.
-# Note: Find other models at https://huggingface.co/models?other=embeddings
-print("\n--- Using Hugging Face Transformers ---")
-huggingface_embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-mpnet-base-v2"
-)
-create_vector_store(docs, huggingface_embeddings, "chroma_db_huggingface")
+# # 2. Hugging Face Transformers
+# # Uses models from the Hugging Face library.
+# # Ideal for leveraging a wide variety of models for different tasks.
+# # Note: Running Hugging Face models locally on your machine incurs no direct cost other than using your computational resources.
+# # Note: Find other models at https://huggingface.co/models?other=embeddings
+# print("\n--- Using Hugging Face Transformers ---")
+# huggingface_embeddings = HuggingFaceEmbeddings(
+#     model_name="sentence-transformers/all-mpnet-base-v2"
+# )
+# create_vector_store(docs, huggingface_embeddings, "chroma_db_huggingface")
 
-print("Embedding demonstrations for OpenAI and Hugging Face completed.")
+# print("Embedding demonstrations for OpenAI and Hugging Face completed.")
 
 
 # Function to query a vector store
@@ -96,6 +96,6 @@ query = "Who is Odysseus' wife?"
 
 # Query each vector store
 query_vector_store("chroma_db_openai", query, openai_embeddings)
-query_vector_store("chroma_db_huggingface", query, huggingface_embeddings)
+# query_vector_store("chroma_db_huggingface", query, huggingface_embeddings)
 
 print("Querying demonstrations completed.")
