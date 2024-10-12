@@ -26,7 +26,7 @@ query = "How can I learn more about LangChain?"
 # Retrieve relevant documents based on the query
 retriever = db.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 1},
+    search_kwargs={"k": 3},
 )
 relevant_docs = retriever.invoke(query)
 
@@ -45,7 +45,7 @@ combined_input = (
 )
 
 # Create a ChatOpenAI model
-model = ChatOpenAI(model="gpt-4o")
+model = ChatOpenAI(model="gpt-4o-mini")
 
 # Define the messages for the model
 messages = [
